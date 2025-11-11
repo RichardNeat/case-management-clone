@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Application Submitted</title>
+  <link rel="stylesheet" href="{% static 'css/application_success.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>Application Submitted!</h1>
+
+    <div class="success-message">
+      <p>Your file has been uploaded to MinIO successfully.</p>
+    </div>
+
+    <div class="success-actions">
+      <a href="/applications/submit/">Submit another application</a>
+    </div>
+  </div>
+</body>
+</html>

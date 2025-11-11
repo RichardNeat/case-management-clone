@@ -1,0 +1,30 @@
+.success-message {
+  text-align: center;
+  background-color: #e6f7ec;
+  border: 1px solid #b5dfc3;
+  color: #256029;
+  padding: 1rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+}
+
+.success-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.success-actions a {
+  display: inline-block;
+  background-color: #005ea5;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.success-actions a:hover {
+  background-color: #003f73;
+}
