@@ -1,22 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Application Success{% endblock %}
+
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Application Submitted</title>
-  <link rel="stylesheet" href="{% static 'css/application_success.css' %}">
-</head>
-<body>
+
+{% block content %}
   <div class="container">
-    <h1>Application Submitted!</h1>
+      <h2>Application Submitted!</h2>
 
-    <div class="success-message">
-      <p>Your file has been uploaded to MinIO successfully.</p>
-    </div>
+      <div class="success-message">
+        <p>Your file has been uploaded to MinIO successfully.</p>
+      </div>
 
-    <div class="success-actions">
-      <a href="/applications/submit/">Submit another application</a>
+      <div class="success-actions">
+        <a href="/applications/submit/">Submit another application</a>
+      </div>
     </div>
-  </div>
-</body>
-</html>
+{% endblock %}

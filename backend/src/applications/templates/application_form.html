@@ -1,23 +1,19 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Submit Application</title>
-  <link rel="stylesheet" href="{% static 'css/application_form.css' %}">
-</head>
-<body>
-  <div class="container">
-    <h1>Submit Application</h1>
-    <form method="post" enctype="multipart/form-data">
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Submit</button>
-    </form>
-    <div class="footer-note">
-      <p>Your uploaded document will be stored securely in MinIO.</p>
-    </div>
-  </div>
-</body>
-</html>
+{% extends "layout.html" %}
 
+{% block title %}Submit Application{% endblock %}
+
+{% load static %}
+
+{% block content %}
+<div class="container">
+  <h2>Submit Application</h2>
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+  </form>
+  <div class="footer-note">
+    <p>Your uploaded document will be stored securely in MinIO.</p>
+  </div>
+</div>
+{% endblock %}

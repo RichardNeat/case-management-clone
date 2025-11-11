@@ -1,39 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>{{ title }}</title>
-    <style>
-      body {
-        font-family: system-ui, sans-serif;
-        background: #f7f7f7;
-        color: #333;
-        padding: 2rem;
-      }
-      h1 {
-        color: #004085;
-      }
-      ul {
-        list-style: square;
-      }
-      .card {
-        background: white;
-        border-radius: 12px;
-        padding: 1.5rem;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      }
-    </style>
-  </head>
-  <body>
-    <div class="card">
-      <h1>{{ title }}</h1>
-      <p>{{ message }}</p>
-      <h3>Tech stack:</h3>
-      <ul>
-        {% for tech in tech_stack %}
-        <li>{{ tech }}</li>
-        {% endfor %}
-      </ul>
-    </div>
-  </body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}Hello World{% endblock %}
+
+{% block content %}
+<div class="card">
+  <h2>{{ title }}</h2>
+  <p>{{ message }}</p>
+
+  <h3>Tech stack:</h3>
+  <ul>
+    {% for tech in tech_stack %}
+      <li>{{ tech }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
