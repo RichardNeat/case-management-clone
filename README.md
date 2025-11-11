@@ -25,10 +25,10 @@ MinIO’s console is available at `http://localhost:9001` (default login: minioa
 
 | Path | Description |
 |------|--------------|
-| `/demo/hello` | Simple intro demo page |
+| `/` | Simple intro demo page |
 | `/applications/submit` | Upload form for new applications |
 | `/applications` | View a list of uploaded applications |
-| `/admin/applications/application` | Django admin dashboard *(requires superuser)* |
+| `/admin` | Django admin dashboard *(requires superuser)* |
 
 ## Commands
 
