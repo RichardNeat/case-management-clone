@@ -39,3 +39,14 @@ Run the linter:
 ```
 docker compose exec web ruff check .
 ```
+
+## Available URLs
+
+There is a demo url available to view a simple test landing page:
+
+`/demo/hello`
+
+To view the admin page where you can manage groups/users, manually add applicants and upload files:
+
+`/admin/applications/application`
+
