@@ -42,14 +42,9 @@ docker compose exec web ruff check .
 
 ## Available URLs
 
-There is a demo url available to view a simple test landing page:
-
-`/demo/hello`
-
-As a user head to this page to view the upload form for an application:
-
-`/applications/submit`
-
-To view the admin page where you can manage groups/users, manually add applicants and upload files:
-
-`/admin/applications/application`
+| Path | Description |
+|------|--------------|
+| `/demo/hello` | Simple intro demo page |
+| `/applications/submit` | Upload form for new applications |
+| `/applications` | View a list of uploaded applications |
+| `/admin/applications/application` | Django admin dashboard *(requires superuser)* |

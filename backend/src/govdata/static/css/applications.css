@@ -1,0 +1,35 @@
+/* --- Applications List --- */
+
+.applications-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+  font-size: 0.95rem;
+}
+
+.applications-table th,
+.applications-table td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.applications-table th {
+  background-color: #005ea5;
+  color: white;
+  font-weight: 600;
+}
+
+.applications-table tr:hover {
+  background-color: #f1f7fb;
+}
+
+.applications-table a {
+  color: #005ea5;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.applications-table a:hover {
+  text-decoration: underline;
+}

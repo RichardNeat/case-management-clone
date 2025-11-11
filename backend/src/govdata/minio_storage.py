@@ -4,9 +4,11 @@ from django.conf import settings
 
 class MinioMediaStorage(S3Boto3Storage):
     bucket_name = settings.AWS_STORAGE_BUCKET_NAME
-    custom_domain = False
+    custom_domain = None
     file_overwrite = False
     default_acl = "private"
+    secure_urls = False
+    use_ssl = False
 
     def __init__(self, *args, **kwargs):
         kwargs["endpoint_url"] = settings.AWS_S3_ENDPOINT_URL

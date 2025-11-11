@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Submit Application</title>
+  <link rel="stylesheet" href="{% static 'css/applications.css' %}">
+</head>
+<body>
+  <div class="container">
+    <h1>View Applications</h1>
+    {% if applications %}
+    <table class="applications-table">
+        <thead>
+            <tr>
+                <th>Applicant</th>
+                <th>Country</th>
+                <th>Status</th>
+                <th>Submitted</th>
+                <th>Supporting Document</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for application in applications %}
+            <tr>
+                <td>{{ application.applicant_name }}</td>
+                <td>{{ application.country_of_origin }}</td>
+                <td>{{ application.status }}</td>
+                <td>{{ application.submission_date }}</td>
+                <td>
+                    {% if application.supporting_document %}
+                        <a href="{{ application.public_url }}" target="_blank">View</a>
+                    {% else %}
+                    —
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+      <p>No applications submitted yet.</p>
+    {% endif %}
+    <div class="success-actions">
+      <br>
+      <a href="/applications/submit/">Submit New Application</a>
+    </div>
+  </div>
+</body>
+</html>

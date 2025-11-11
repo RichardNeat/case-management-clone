@@ -130,12 +130,16 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 import os
 
-AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY")
+AWS_ACCESS_KEY_ID = os.getenv("AWS_ACCESS_KEY_ID", "minioadmin")
+AWS_SECRET_ACCESS_KEY = os.getenv("AWS_SECRET_ACCESS_KEY", "minioadmin")
 AWS_STORAGE_BUCKET_NAME = os.getenv("AWS_STORAGE_BUCKET_NAME", "govdata")
 AWS_S3_ENDPOINT_URL = os.getenv("AWS_S3_ENDPOINT_URL", "http://minio:9000")
+AWS_S3_USE_SSL = False
+AWS_S3_VERIFY = False
 
 DEFAULT_FILE_STORAGE = "govdata.minio_storage.MinioMediaStorage"
+
+MINIO_PUBLIC_URL = "http://localhost:9000"
 
 from django.core.files.storage import storages
 from govdata.minio_storage import MinioMediaStorage
