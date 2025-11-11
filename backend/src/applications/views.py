@@ -3,6 +3,7 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.conf import settings
+from django.db import ProgrammingError, OperationalError
 
 from .forms import ApplicationForm
 
@@ -23,10 +24,17 @@ def application_success(request):
     return render(request, "application_success.html")
 
 def view_applications(request):
-    applications = Application.objects.all()
-    for app in applications:
-        if app.supporting_document:
-            app.public_url = app.supporting_document.url.replace("http://minio:9000", settings.MINIO_PUBLIC_URL)
-        else:
-            app.public_url = None
+    applications = []
+    
+    try:
+        applications = list(Application.objects.all())
+        for app in applications:
+            if app.supporting_document:
+                app.public_url = app.supporting_document.url.replace("http://minio:9000", settings.MINIO_PUBLIC_URL)
+            else:
+                app.public_url = None
+    except(ProgrammingError, OperationalError) as e:
+        db_error = str(e)
+
+
     return render(request, "applications.html", {"applications": applications})
