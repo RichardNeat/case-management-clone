@@ -21,6 +21,15 @@ docker compose up --build
 This will make the app available at `http://localhost:8000`.
 MinIO’s console is available at `http://localhost:9001` (default login: minioadmin:minioadmin).
 
+## Available URLs
+
+| Path | Description |
+|------|--------------|
+| `/demo/hello` | Simple intro demo page |
+| `/applications/submit` | Upload form for new applications |
+| `/applications` | View a list of uploaded applications |
+| `/admin/applications/application` | Django admin dashboard *(requires superuser)* |
+
 ## Commands
 
 Access the docker container shell:
@@ -39,12 +48,3 @@ Run the linter:
 ```
 docker compose exec web ruff check .
 ```
-
-## Available URLs
-
-| Path | Description |
-|------|--------------|
-| `/demo/hello` | Simple intro demo page |
-| `/applications/submit` | Upload form for new applications |
-| `/applications` | View a list of uploaded applications |
-| `/admin/applications/application` | Django admin dashboard *(requires superuser)* |
