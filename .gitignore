@@ -1,0 +1,31 @@
+# Python / Django
+__pycache__/
+*.py[cod]
+*.sqlite3
+.env
+venv/
+.envrc
+*.log
+
+# Ruff / cache
+.ruff_cache/
+
+# Django static/media
+media/
+staticfiles/
+
+# Docker / build artefacts
+*.pid
+*.seed
+*.bak
+*.log
+*.db
+
+# Local development
+.idea/
+.vscode/
+.DS_Store
+
+# MinIO and database volumes
+minio-data/
+pg_data/
