@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.conf import settings
 from django.db import ProgrammingError, OperationalError
+from django.urls import reverse
 
 from .forms import ApplicationForm
 
@@ -14,7 +15,7 @@ def submit_application(request):
         form = ApplicationForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return HttpResponseRedirect("/applications/success")
+            return HttpResponseRedirect(reverse("application_success"))
     else:
         form = ApplicationForm()
 
