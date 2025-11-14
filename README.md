@@ -53,3 +53,7 @@ Run migrations:
 docker compose exec web python manage.py makemigrations
 docker compose exec web python manage.py migrate
 ```
+Run the tests:
+```
+docker compose exec web python manage.py test
+```
