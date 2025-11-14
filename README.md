@@ -32,28 +32,14 @@ MinIO’s console is available at `http://localhost:9001` (default login: minioa
 
 ## Commands
 
-Access the docker container shell:
-```
-docker compose exec web bash
-```
-Apply migrations:
-```
-docker compose exec web python manage.py migrate
-```
-Create a superuser:
-```
-docker compose exec web python manage.py createsuperuser
-```
-Run the linter:
-```
-docker compose exec web ruff check .
-```
-Run migrations:
-```
-docker compose exec web python manage.py makemigrations
-docker compose exec web python manage.py migrate
-```
-Run the tests:
-```
-docker compose exec web python manage.py test
-```
+This project has a `MakeFile` which exposes the following commands:
+
+| Command | Description |
+|----------|--------------|
+| `make up` | Build and start all containers |
+| `make down` | Stop and remove containers |
+| `make bash` | Open an interactive shell in the web container |
+| `make migrate` | Run `makemigrations` and `migrate` |
+| `make superuser` | Create a Django superuser |
+| `make lint` | Run Ruff linter |
+| `make test` | Run Django tests |
